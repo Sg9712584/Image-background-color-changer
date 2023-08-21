@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convert 2-D image into 3-D image</title>
+    <style>
+        #color{
+            
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding: 20px;
+            border: none;
+            width: 100%;
+
+        }
+        .button{
+            height: 8vh;
+            width: 20vw;
+            border: 2px solid black;
+            border-radius: 34px;
+        }
+        #green{
+            background-color:rgb(44, 143, 111);
+            cursor: pointer;
+            border-color: rgb(13, 83, 61);
+            
+        }
+        #green:hover{
+            box-shadow: 2px 2px rgb(159, 231, 209) ;
+            border-color: rgb(3, 27, 20);
+        }
+        #red{
+            background-color:rgb(223, 25, 25);
+            cursor: pointer;
+            border-color: rgba(151, 77, 77, 0.952);
+            
+        }
+        #red:hover{
+            
+            box-shadow: 2px 2px rgb(252, 109, 98) ;
+            border-color: rgb(83, 34, 34);
+        }
+        #blue{
+            background-color:rgb(44, 46, 143);
+            cursor: pointer;
+            border-color: rgb(26, 13, 83);
+            
+        }
+        #blue:hover{
+            
+            border-color: rgb(3, 3, 27);
+            box-shadow: 2px 2px rgb(170, 159, 231) ;
+
+        }
+        #light-green{
+            background-color:rgb(47, 143, 44);
+            cursor: pointer;
+            border-color: rgb(13, 83, 28);
+            
+        }
+        #light-green:hover{
+            
+            border-color: rgb(3, 27, 6);
+            box-shadow: 2px 2px rgb(167, 231, 159) ;
+
+        }
+        #yellow{
+            background-color:rgb(143, 133, 44);
+            cursor: pointer;
+            border-color: rgb(76, 83, 13);
+            
+        }
+        #yellow:hover{
+            
+            border-color: rgb(23, 27, 3);
+            box-shadow: 2px 2px rgb(224, 231, 159) ;
+
+        }
+        #pink{
+            background-color:rgb(143, 44, 130);
+            cursor: pointer;
+            border-color: rgb(83, 13, 77);
+            
+        }
+        #pink:hover{
+            
+            border-color: rgb(26, 3, 27);
+            box-shadow: 2px 2px rgb(231, 159, 213) ;
+
+        }
+        #grey{
+            background-color:rgb(76, 78, 78);
+            cursor: pointer;
+            border-color: rgb(190, 196, 194);
+            
+        }
+        #grey:hover{
+            
+            box-shadow: 2px 2px rgb(149, 151, 151) ;
+            border-color: rgb(25, 26, 25);
+        }
+        #purple{
+            background-color:rgb(87, 40, 134);
+            cursor: pointer;
+            border-color: rgb(192, 138, 245);
+            
+        }
+        #purple:hover{
+            
+            box-shadow: 2px 2px rgb(122, 104, 139) ;
+            border-color: rgb(39, 23, 49);
+        }
+#hero{
+    border: none;
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+    gap: 50px;
+    margin-top: 300px;
+    margin-left: 400px;
+}
+img{
+    height: 55vh;
+    width: 25vw;
+}
+label{
+    background-color:rgb(255, 115, 0);
+    padding: 7px 30px;
+    border-radius: 2px;
+    color: white;
+    cursor: pointer;
+}
+    </style>
+</head>
+<body>
+<div id="color">
+    <span class="button" id="green"></span>
+    <span class="button" id="red"></span>
+    <span class="button" id="blue"></span>
+    <span class="button" id="light-green"></span>
+    <span class="button" id="yellow"></span>
+    <span class="button" id="pink"></span>
+    <span class="button" id="grey"></span>
+    <span class="button" id="purple"></span>
+</div>
+<div id="hero">
+    <img id="image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmNWKrvoQ9NJHzEY1SIW0ayZ6W8bD26QtQW98N-MrskGjF52ci90tG1R0T6IgiqgOd7O0&usqp=CAU" alt="">
+     <label for="input-file">Update Image</label>
+     <input type="file" accept="image/jpeg , image/png ,image/jpg" id="input-file">
+</div>
+
+    <script>
+        let buttons = document.querySelectorAll(".button")
+        let image = document.getElementById("image");
+        let body = document.querySelector("body ");
+
+        buttons.forEach(function(button){
+            button.addEventListener('click' , function (e){
+                if(e.target.id === 'green'){
+                    body.style.backgroundColor = e.target.id
+                }
+                if(e.target.id === 'red'){
+                    body.style.backgroundColor = e.target.id
+                }
+                if(e.target.id === 'blue'){
+                    body.style.backgroundColor = e.target.id
+                }
+                if(e.target.id === 'light-green'){
+                    body.style.backgroundColor = e.target.id
+                }
+                if(e.target.id === 'yellow'){
+                    body.style.backgroundColor = e.target.id
+                }
+                if(e.target.id === 'pink'){
+                    body.style.backgroundColor = e.target.id
+                }
+                if(e.target.id === 'grey'){
+                    body.style.backgroundColor = e.target.id
+                }
+                if(e.target.id === 'purple'){
+                    body.style.backgroundColor = e.target.id
+                }
+            })
+        })
+        
+           
+
+        let inputfile = document.getElementById("input-file");
+        inputfile.onchange = function(){
+            image.src=URL.createObjectURL(inputfile.files[0])
+        }
+    </script>
+    
+</body>
+</html>  
